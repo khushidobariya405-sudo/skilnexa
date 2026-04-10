@@ -1,0 +1,61 @@
+@model IEnumerable<SkilNexa.Models.CandidateDiscoveryViewModel>
+
+@{
+    ViewData["Title"] = "Discovery - SkilNexa";
+}
+
+<link rel="stylesheet" href="~/css/discovery-layout.css" asp-append-version="true" />
+
+<section class="discovery-container">
+    <aside class="filters-sidebar">
+        <div class="sidebar-header">
+            <h3 style="color: #3b82f6; font-size: 0.8rem; letter-spacing: 2px; font-weight: 800;">FILTERS</h3>
+        </div>
+        
+        <div class="filter-section">
+            <h4 style="color: white; margin-bottom: 15px; font-size: 1rem;">Work Mode</h4>
+            <div class="options-list">
+                <label class="filter-label">
+                    <input type="radio" name="mainFilter" value="All" checked onclick="handleFilterChange(this.value)"> 
+                    <span>All Opportunities</span>
+                </label>
+                <label class="filter-label">
+                    <input type="radio" name="mainFilter" value="Remote" onclick="handleFilterChange(this.value)"> 
+                    <span>Remote Only</span>
+                </label>
+                <label class="filter-label">
+                    <input type="radio" name="mainFilter" value="Office" onclick="handleFilterChange(this.value)"> 
+                    <span>Office Based</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="track-status-container" style="margin-top: 50px; padding: 20px; background: rgba(59, 130, 246, 0.05); border-radius: 20px; border: 1px dashed #30363d;">
+            <div style="font-size: 1.5rem; margin-bottom: 10px;">🕒</div>
+            <h4 style="color: white; margin-bottom: 8px; font-size: 0.95rem;">Check Status</h4>
+            <p style="color: #8b949e; font-size: 0.75rem; margin-bottom: 15px; line-height: 1.4;">Check the progress of your submitted applications.</p>
+            <a href="/Apply/TrackStatus" class="track-btn">Track Application</a>
+        </div>
+    </aside>
+
+    <main class="content-area">
+        <div class="hero-text">
+            <h1 style="color: white; font-size: 2.5rem; font-weight: 800; margin-bottom: 10px;">
+                Discover Best <span style="color: #3b82f6;">Opportunities</span>
+            </h1>
+            <p style="color: #8b949e; margin-bottom: 30px;">Find your next career move with SkilNexa Partners</p>
+        </div>
+
+        <div class="company-grid" id="companyGrid">
+            </div>
+
+        <div class="load-more-wrapper" style="text-align: center; margin-top: 40px;">
+            <button id="toggleBtn" class="load-btn" onclick="toggleDisplayLimit()">View More Jobs</button>
+        </div>
+    </main>
+</section>
+
+@section Scripts {
+    <script>const serverData = @Html.Raw(Json.Serialize(Model));</script>
+    <script src="~/js/discovery-logic.js" asp-append-version="true"></script>
+}

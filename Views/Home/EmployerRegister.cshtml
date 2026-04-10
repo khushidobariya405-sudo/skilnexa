@@ -1,0 +1,70 @@
+@{
+    ViewData["Title"] = "Candidate Registration";
+}
+
+<link rel="stylesheet" href="~/css/registration-style.css" asp-append-version="true" />
+
+<section class="onboarding-wrapper">
+    <div class="form-card">
+        <form asp-action="SubmitRegistration" method="post">
+            <h2>Join Skilnexa</h2>
+            <p class="subtitle">Complete your profile to find the best job matches.</p>
+
+            <div class="radio-group">
+                <label class="radio-option">
+                    <input type="radio" name="UserStatus" value="fresher" onclick="toggleUserType('fresher')" checked>
+                    <div class="radio-content">
+                        <span class="icon">🎓</span>
+                        <strong>Fresher</strong>
+                    </div>
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="UserStatus" value="experienced" onclick="toggleUserType('experienced')">
+                    <div class="radio-content">
+                        <span class="icon">💼</span>
+                        <strong>Experience</strong>
+                    </div>
+                </label>
+            </div>
+
+            <div class="input-box">
+                <label id="orgLabel">College / University Name</label>
+                <input type="text" name="Organization" id="orgInput" 
+                       placeholder="Search institution..." 
+                       oninput="handleSearch(this.value)" 
+                       autocomplete="off" required />
+                
+                <div id="searchList" class="search-results"></div>
+            </div>
+
+            <div id="experienceSection" style="display: none;">
+                <div class="input-box">
+                    <label>Total Experience</label>
+                    <select name="ExperienceYears" id="expYears">
+                        <option value="">Select Experience</option>
+                        <option value="0-1">Less than 1 Year</option>
+                        <option value="1">1 Year</option>
+                        <option value="2">2 Years</option>
+                        <option value="3">3 Years</option>
+                        <option value="4">4 Years</option>
+                        <option value="5+">5+ Years</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-box">
+                <label>Email Address</label>
+                <input type="email" name="Email" placeholder="yourname@example.com" required />
+            </div>
+
+            <div class="input-box">
+                <label>Brief Bio</label>
+                <textarea name="Bio" rows="3" placeholder="Tell us about your skills..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Finish & Create Profile</button>
+        </form>
+    </div>
+</section>
+
+<script src="~/js/registration-logic.js" asp-append-version="true"></script>

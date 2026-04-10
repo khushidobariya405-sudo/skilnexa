@@ -1,0 +1,141 @@
+@{
+    ViewData["Title"] = "Student Registration";
+}
+
+<link rel="stylesheet" href="~/css/onboarding.css" asp-append-version="true" />
+
+<section class="onboarding-wrapper">
+    <div class="form-card">
+        
+        <div class="success-overlay" id="successPopup">
+            <div class="success-icon">✅</div>
+            <h2 style="color:white">All Set!</h2>
+            <p style="color:#94a3b8">Your profile has been created.<br>Redirecting to internships...</p>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <form id="studentForm" onsubmit="handleFinalSubmit(event)">
+            
+            <div class="step active" id="step1">
+                <h3 style="color:white">Where do you study? 🎓</h3>
+               <div class="input-box">
+    <label>College/University Name</label>
+    <input type="text" id="college" list="uni-list" placeholder="Type Here e.g. GTU" required autocomplete="off" />
+    
+    <datalist id="uni-list">
+        <option value="Gujarat Technological University (GTU)"></option>
+        <option value="Nirma University"></option>
+        <option value="Maharaja Sayajirao University of Baroda (MSU)"></option>
+        <option value="Gujarat University (GU)"></option>
+        <option value="Sardar Patel University (SPU)"></option>
+        <option value="Dharmsinh Desai University (DDU)"></option>
+        <option value="DA-IICT"></option>
+        <option value="Pandit Deendayal Energy University (PDEU)"></option>
+        <option value="Charotar University of Science and Technology (CHARUSAT)"></option>
+        <option value="Ganpat University (GUNI)"></option>
+        <option value="Parul University"></option>
+        <option value="Marwadi University"></option>
+        <option value="RK University"></option>
+        <option value="Silver Oak University"></option>
+        <option value="Indus University"></option>
+        <option value="Ahmedabad University"></option>
+        <option value="CEPT University"></option>
+        <option value="Navrachana University"></option>
+        <option value="Atmiya University"></option>
+        <option value="Saurashtra University"></option>
+        <option value="Veer Narmad South Gujarat University (VNSGU)"></option>
+        <option value="Hemchandracharya North Gujarat University (HNGU)"></option>
+        <option value="Kranti Guru Shyamji Krishna Verma Kachchh University"></option>
+        <option value="Bhakta Kavi Narasinh Mehta Universit"></option>
+        <option value="Junagadh Agricultural University"></option>
+        <option value="Anand Agricultural University"></option>
+        <option value="Navsari Agricultural University"></option>
+        <option value="Sardar Krushinagar Dantiwada Agricultural University"></option>
+        <option value="Sumandeep Vidyapeeth"></option>
+        <option value="P P Savani University"></option>
+        <option value="Uka Tarsadia University(UTU)"></option>
+        <option value="Auro University"></option>
+        <option value="Rai University"></option>
+        <option value="G L S University"></option>
+        <option value="TeamLease Skills University"></option>
+        <option value="LDRP Institute of Technology and Research"></option>
+      
+
+    </datalist>
+</div>
+                <div class="input-box">
+                    <label>Degree / Branch</label>
+                    <input type="text" id="degree" list="degree-list"placeholder="e.g. B.E. Computer" required />
+                    <datalist id="degree-list">
+                        <option value="B.E. Computer Engineering"/>
+                        <option value="B.E. Information Technology"/>
+                        <option value="B.E. Mechanical Engineering"/>
+                        <option value="B.E. Civil Engineering"/>
+                        <option value="B.E. Electrical Engineering"/>
+                        <option value="B.E. Electronics & Communication"/>
+                        <option value="B.Tech Computer Science"/>
+                        <option value="B.C.A. (Bachelor of Computer Applications)"/>
+                        <option value="M.C.A. (Master of Computer Applications)"/>
+                        <option value="B.Sc. IT"/>
+                        <option value="M.Sc. IT"/>
+                        <option value="B.Com (Bachelor of Commerce)"/>
+                        <option value="M.Com (Master of Commerce)"/>
+                        <option value="B.B.A. (Bachelor of Business Administration)"/>
+                        <option value="M.B.A. (Master of Business Administration)"/>
+                        <option value="Diploma Engineering"/>
+                        <option value="B.Pharm"/>
+                        <option value="M.Pharm"/>
+        
+            </datalist>
+                </div>
+                <button type="button" class="btn-next" onclick="validateAndNext(2)">Next: Interests →</button>
+            </div>
+
+            <div class="step" id="step2">
+                <h3 style="color:white">Internship Preferences 🔍</h3>
+                <div class="input-box">
+                    <label>Preferred Role</label>
+                    <input type="text" id="role" placeholder="e.g. Web Developer" required />
+                </div>
+                <div class="input-box">
+                    <label>Stipend Preference</label>
+                    <div class="stipend-options">
+                        <label class="stipend-card">
+                            <input type="radio" name="Stipend" value="Paid" checked>
+                            <div class="stipend-box"><span>💰 Paid</span></div>
+                        </label>
+                        <label class="stipend-card">
+                            <input type="radio" name="Stipend" value="Unpaid">
+                            <div class="stipend-box"><span>🎓 Unpaid</span></div>
+                        </label>
+                    </div>
+                </div>
+                <div style="display:flex; gap:10px;">
+                    <button type="button" style="background:#334155" class="btn-next" onclick="goToStep(1)">Back</button>
+                    <button type="button" class="btn-next" onclick="validateAndNext(3)">Last Step →</button>
+                </div>
+            </div>
+
+            <div class="step" id="step3">
+                <h3 style="color:white">Tell us about yourself ✨</h3>
+                <div class="input-box">
+                    <label>Why should we hire you?</label>
+                    <textarea id="bio" rows="4" placeholder="Your skills and passion..." required></textarea>
+                </div>
+                <div style="display:flex; gap:10px;">
+                    <button type="button" style="background:#334155" class="btn-next" onclick="goToStep(2)">Back</button>
+                  <div class="center-btn-wrapper">
+    <a asp-controller="Home" asp-action="InternshipList" class="btn-main">
+        Find Internship
+    </a>
+</div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<script src="~/js/onboarding.js"></script>

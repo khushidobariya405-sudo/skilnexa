@@ -1,0 +1,40 @@
+@model SkilNexa.Models.InternshipApplication
+
+<div class="intern-apply-container" style="max-width: 600px; margin: 80px auto; color: white; background: #0f172a; padding: 40px; border-radius: 24px; border: 1px solid #334155; font-family: 'Plus Jakarta Sans', sans-serif;">
+    <div style="text-align: center; margin-bottom: 30px;">
+        <h2 style="color: #22d3ee; margin-bottom: 10px;">Internship Application</h2>
+        <p style="color: #94a3b8;">Applying for <strong>@Model.InternRole</strong> at <strong>@Model.PartnerName</strong></p>
+    </div>
+
+    <form asp-action="SubmitInternship" asp-controller="Internship" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="InternRole" />
+        <input type="hidden" asp-for="PartnerName" />
+
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; margin-bottom: 8px; color: #f8fafc;">Full Name</label>
+            <input type="text" asp-for="StudentName" placeholder="Enter your full name" required 
+                   style="width: 100%; padding: 12px; background: #1e293b; border: 1px solid #334155; border-radius: 10px; color: white;" />
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; margin-bottom: 8px; color: #f8fafc;">Email Address</label>
+            <input type="email" asp-for="Email" placeholder="example@gmail.com" required 
+                   style="width: 100%; padding: 12px; background: #1e293b; border: 1px solid #334155; border-radius: 10px; color: white;" />
+        </div>
+
+        <div style="margin-bottom: 30px;">
+            <label style="display: block; margin-bottom: 8px; color: #f8fafc;">Upload Resume (PDF)</label>
+            <input type="file" asp-for="Resume" accept=".pdf" required 
+                   style="display: block; width: 100%; color: #94a3b8; font-size: 0.9rem;" />
+        </div>
+
+        <button type="submit" style="width: 100%; padding: 15px; background: #3b82f6; border: none; border-radius: 12px; color: white; font-weight: 700; font-size: 1rem; cursor: pointer; transition: 0.3s;" 
+                onmouseover="this.style.background='#2563eb'" onmouseout="this.style.background='#3b82f6'">
+            Submit Application
+        </button>
+    </form>
+    
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="/Internship/List" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem;">← Back to List</a>
+    </div>
+</div>

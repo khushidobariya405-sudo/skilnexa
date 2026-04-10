@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>SkillNexa</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">Skill<span>Nexa</span></div>
+    <nav class="nav-links">
+        <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>    
+        <a class="nav-link" asp-controller="Home" asp-action="Employer">For Employers</a>
+        <a class="nav-link" asp-controller="Home" asp-action="Internship">For Student</a>
+        <a class="nav-link" asp-controller="Home" asp-action="Resources">Resources</a>
+        <a class="nav-link" asp-controller="Home" asp-action="AboutUs">About Us</a>
+        <a class="nav-link" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
+    </nav>
+    <div class="nav-buttons">
+        <a href="/Login" class="btn-outline" style="text-decoration:none">Login</a>
+        <a href="/Register" class="btn-primary" style="text-decoration:none">Get Started</a>
+    </div>
+</header>
+
+@RenderBody()
+
+<footer class="skilnexa-footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h2 class="footer-logo">Skilnexa</h2>
+            <p class="tagline">100x Smarter Skill Search, Made in India 🇮🇳</p>
+            <div class="social-links">
+                <a href="#" title="Telegram"><i class="fab fa-telegram"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="footer-links">
+            <div class="link-column">
+                <h3>Products</h3>
+                <ul>
+                    <li><a href="#">SkillNexa for Students</a></li>
+                    <li><a href="#">Skilnexa for Employer</a></li>
+                </ul>
+            </div>
+            <div class="link-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Why Skilnexa?</a></li>
+                </ul>
+            </div>
+            <div class="link-column">
+                <h3>Info</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <hr>
+        <p>&copy; @DateTime.Now.Year Skilnexa. All rights reserved.</p>
+    </div>
+</footer>
+
+@* બધી જરૂરી સ્ક્રિપ્ટ્સ અહીં એક જ વાર *@
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+@* આખા પેજમાં આ લાઈન ફક્ત એક જ વાર હોવી જોઈએ *@
+@await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

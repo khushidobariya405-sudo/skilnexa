@@ -1,0 +1,85 @@
+@{
+    ViewData["Title"] = "Available Internships";
+}
+
+<link rel="stylesheet" href="~/css/internship-list.css" asp-append-version="true" />
+
+<div class="list-wrapper">
+    <header class="list-header">
+        <h2 class="text-cyan">Find Your Dream <span>Internship</span></h2>
+        <p style="color: var(--text-muted);">Explore the best opportunities tailored for you</p>
+    </header>
+
+    <div class="main-layout">
+        <aside class="filters-sidebar">
+            <h4 class="filter-title">FILTERS</h4>
+            
+            <div class="filter-group">
+                <label>Job Type</label>
+                <div class="check-item">
+                    <input type="radio" name="jobType" class="filter-radio" value="All" checked onchange="applyFilters()"> All
+                </div>
+                <div class="check-item">
+                    <input type="radio" name="jobType" class="filter-radio" value="Remote" onchange="applyFilters()"> Remote
+                </div>
+                <div class="check-item">
+                    <input type="radio" name="jobType" class="filter-radio" value="Office" onchange="applyFilters()"> Office
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <label>Stipend</label>
+                <div class="check-item">
+                    <input type="radio" name="stipendType" class="filter-radio" value="All" checked onchange="applyFilters()"> All
+                </div>
+                <div class="check-item">
+                    <input type="radio" name="stipendType" class="filter-radio" value="Paid" onchange="applyFilters()"> Paid
+                </div>
+                <div class="check-item">
+                    <input type="radio" name="stipendType" class="filter-radio" value="Unpaid" onchange="applyFilters()"> Unpaid
+                </div>
+            </div>
+
+            <div class="track-box-sidebar">
+                <div class="track-icon">🕒</div>
+                <h4>Quick Track</h4>
+                <p>Check the status of your previous applications.</p>
+                <a href="/Internship/TrackStatus" class="btn-track-sidebar">Track Now</a>
+            </div>
+        </aside>
+
+        <section class="content-area">
+            <div class="cards-grid" id="internshipGrid">
+                @for (int i = 1; i <= 12; i++)
+                {
+                    string type = (i % 2 == 0) ? "Remote" : "Office";
+                    string stipend = (i % 3 == 0) ? "Unpaid" : "Paid";
+                    string company = "Skilnexa Partner " + i;
+                    string title = "Web Development Intern";
+                    
+                    <div class="internship-card" data-type="@type" data-stipend="@stipend">
+                        <div style="margin-bottom: 12px;">
+                            <span class="@(stipend == "Paid" ? "badge-paid" : "badge-unpaid")">@stipend</span>
+                        </div>
+                        <h3>@title</h3>
+                        <p class="company-name">@company</p>
+                        <p class="loc-text">📍 @type • 💰 ₹15,000/mo</p>
+                        
+                       <button class="btn-apply" 
+        onclick="window.location.href='/Internship/Apply?role=@Uri.EscapeDataString(title)&partner=@Uri.EscapeDataString(company)'">
+    Apply Now
+</button>
+                    </div>
+                }
+            </div>
+
+            <div class="toggle-container">
+                <button id="toggleBtn" class="btn-more" onclick="toggleInternships()">View More</button>
+            </div>
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/internship-toggle.js" asp-append-version="true"></script>
+}

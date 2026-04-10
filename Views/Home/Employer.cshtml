@@ -1,0 +1,68 @@
+@{
+    ViewData["Title"] = "Hire on Skilnexa";
+}
+
+<link rel="stylesheet" href="~/css/employer.css" asp-append-version="true" />
+
+<div class="employer-hero-wrapper">
+    <div class="bg-glow"></div>
+    
+    <div class="employer-content-box fade-in-scale">
+        
+        <div class="brand-icon-wrapper floating">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+        </div>
+
+        <h1 class="main-heading">
+            Stop paying for CVs,<br>
+            <span class="text-blue">Start Hiring Candidates</span>
+        </h1>
+
+        <p class="sub-text">
+            Get quality, pre-matched candidates instantly.<br>
+            Faster hires, lower costs, zero hassle with <strong>Skilnexa</strong>.
+        </p>
+
+        <div class="cta-area">
+            <a asp-controller="Home" asp-action="EmployerRegister" class="btn-primary-custom">
+                Start hiring for free
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+<section class="candidate-hero-wrapper">
+    <div class="bg-glow-purple"></div>
+    
+    <div class="candidate-content-box fade-in-up">
+        
+        <div class="brand-icon-wrapper floating-delayed">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+        </div>
+
+        <h2 class="main-heading">
+            Stop chasing job boards,<br>
+            <span class="text-purple">Let the best companies find you</span>
+        </h2>
+
+        <p class="sub-text">
+            Get matched with roles that fit your skills and salary expectations.<br>
+            Land your dream job with <strong>Skilnexa's</strong> smart matching engine.
+        </p>
+
+        <div class="cta-area">
+           <a asp-controller="Home" asp-action="EmployerRegister" class="btn-primary-custom">
+                Build My Professional Profile
+            </a>
+        </div>
+        
+    </div>
+</section>

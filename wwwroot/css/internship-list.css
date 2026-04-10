@@ -1,0 +1,243 @@
+:root {
+    --bg-dark: #020617;
+    --card-bg: #0f172a;
+    --sidebar-bg: #1e293b;
+    --accent-blue: #3b82f6;
+    --cyan-glow: #22d3ee;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+}
+
+body {
+    background-color: var(--bg-dark);
+    margin: 0;
+}
+
+.list-wrapper { 
+    max-width: 1400px; 
+    margin: 40px auto; 
+    padding: 0 20px; 
+    color: var(--text-main); 
+}
+
+/* Centered Header Styles */
+.list-header { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    margin-bottom: 50px; 
+    gap: 10px; 
+}
+.text-cyan { 
+    font-size: 38px; 
+    font-weight: 800; 
+}
+.text-cyan span { 
+    color: var(--cyan-glow); 
+}
+
+/* Layout Grid - Centered */
+.main-layout { 
+    display: grid; 
+    grid-template-columns: 280px 1fr; 
+    gap: 40px; 
+    justify-content: center; /* સાઈડબાર અને ગ્રીડને વચ્ચે લાવશે */
+}
+
+/* Sidebar Filters */
+.filters-sidebar { 
+    background: var(--sidebar-bg); 
+    padding: 30px; 
+    border-radius: 20px; 
+    border: 1px solid var(--border-color); 
+    height: fit-content; 
+    position: sticky; 
+    top: 30px; 
+}
+.filter-title { 
+    font-size: 14px; 
+    font-weight: 800; 
+    color: var(--cyan-glow); 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    margin-bottom: 25px; 
+    border-bottom: 1px solid var(--border-color); 
+    padding-bottom: 10px; 
+}
+.filter-group { 
+    margin-bottom: 30px; 
+}
+.filter-group label { 
+    display: block; 
+    font-size: 15px; 
+    font-weight: 600; 
+    margin-bottom: 15px; 
+}
+
+.check-item { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    margin-bottom: 12px; 
+    color: var(--text-muted); 
+    cursor: pointer; 
+    transition: 0.3s; 
+}
+.check-item:hover { 
+    color: var(--text-main); 
+}
+.filter-radio { 
+    width: 18px; 
+    height: 18px; 
+    accent-color: var(--accent-blue); 
+    cursor: pointer; 
+}
+
+/* --- NEW: Track Application Sidebar Box --- */
+.track-box-sidebar {
+    margin-top: 40px;
+    padding: 25px 20px;
+    background: rgba(34, 211, 238, 0.05); /* Cyan Glow Effect */
+    border: 1px dashed var(--border-color);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.track-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.track-box-sidebar h4 {
+    color: var(--text-main);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.track-box-sidebar p {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-bottom: 18px;
+    line-height: 1.4;
+}
+
+.btn-track-sidebar {
+    display: inline-block;
+    width: 100%;
+    background: var(--accent-blue);
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.btn-track-sidebar:hover {
+    background: white;
+    color: var(--bg-dark);
+    transform: translateY(-3px);
+}
+
+/* 3-Column Cards Grid */
+.cards-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px; 
+}
+
+.internship-card { 
+    background: var(--card-bg); 
+    padding: 25px; 
+    border-radius: 18px; 
+    border: 1px solid var(--border-color); 
+    display: flex; 
+    flex-direction: column; 
+    transition: all 0.4s ease; 
+}
+.internship-card:hover { 
+    transform: translateY(-10px); 
+    border-color: var(--accent-blue); 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); 
+}
+
+.badge-paid { 
+    background: rgba(52, 211, 153, 0.1); 
+    color: #34d399; 
+    padding: 4px 12px; 
+    border-radius: 6px; 
+    font-size: 12px; 
+    font-weight: 700; 
+    align-self: flex-start; 
+}
+.badge-unpaid { 
+    background: rgba(245, 158, 11, 0.1); 
+    color: #f59e0b; 
+    padding: 4px 12px; 
+    border-radius: 6px; 
+    font-size: 12px; 
+    font-weight: 700;
+    align-self: flex-start; 
+}
+
+.company-name { 
+    color: var(--accent-blue); 
+    font-size: 15px; 
+    font-weight: 600; 
+    margin: 10px 0; 
+}
+.loc-text { 
+    font-size: 14px; 
+    color: var(--text-muted); 
+    margin-bottom: 25px; 
+}
+
+.btn-apply { 
+    margin-top: auto; 
+    padding: 12px; 
+    background: var(--accent-blue); 
+    color: white; 
+    border: none; 
+    border-radius: 10px; 
+    font-weight: 700; 
+    cursor: pointer; 
+    transition: 0.3s; 
+}
+.btn-apply:hover { 
+    background: #2563eb; 
+}
+
+/* View More Button */
+.toggle-container { 
+    text-align: center; 
+    margin-top: 60px; 
+}
+.btn-more { 
+    background: transparent; 
+    color: var(--text-main); 
+    border: 2px solid var(--border-color); 
+    padding: 14px 60px; 
+    border-radius: 50px; 
+    cursor: pointer; 
+    font-weight: 700; 
+    transition: 0.3s; 
+}
+.btn-more:hover { 
+    background: var(--text-main); 
+    color: var(--bg-dark); 
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 850px) { 
+    .main-layout { grid-template-columns: 1fr; } 
+    .cards-grid { grid-template-columns: 1fr; } 
+    .filters-sidebar { position: static; width: 100%; box-sizing: border-box; }
+}

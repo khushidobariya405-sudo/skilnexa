@@ -1,0 +1,171 @@
+/* --- Global Container --- */
+.main-container {
+    background-color: #050a15; /* ઘેરો કાળો બેકગ્રાઉન્ડ */
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* આડું સેન્ટર કરવા માટે */
+    text-align: center;
+    padding: 80px 20px;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* બેકગ્રાઉન્ડ ગ્લો ઈફેક્ટ */
+.bg-glow-cyan {
+    position: absolute;
+    top: 5%; 
+    width: 600px; 
+    height: 600px;
+    background: radial-gradient(circle, rgba(45, 212, 191, 0.12) 0%, transparent 75%);
+    z-index: 0;
+}
+
+/* --- Hero Section Styling --- */
+.hero-section { 
+    max-width: 850px; 
+    margin-bottom: 100px; 
+    z-index: 1; 
+}
+
+.main-heading { 
+    font-size: 3.8rem; 
+    font-weight: 800; 
+    line-height: 1.1; 
+    margin: 25px 0; 
+}
+
+.text-cyan { 
+    background: linear-gradient(90deg, #2dd4bf, #60a5fa); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+}
+
+.sub-text { 
+    color: #94a3b8; 
+    font-size: 1.2rem; 
+    margin-bottom: 40px; 
+    line-height: 1.6;
+}
+
+/* --- The Proper Middle Button --- */
+.center-btn-wrapper { 
+    margin-top: 20px; 
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-main {
+    background-color: #ffffff;
+    color: #050a15;
+    padding: 18px 50px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.15rem;
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.btn-main:hover { 
+    transform: scale(1.05) translateY(-5px); 
+    box-shadow: 0 0 30px rgba(45, 212, 191, 0.4); 
+    background-color: #f8fafc;
+}
+
+/* --- Steps Section (Fixing the alignment) --- */
+.how-it-works { 
+    width: 100%; 
+    max-width: 1100px; 
+    margin-bottom: 100px; 
+    z-index: 1; 
+}
+
+.section-title { 
+    font-size: 2.5rem; 
+    margin-bottom: 60px; 
+    font-weight: 700;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: center; /* કાર્ડ્સને સેન્ટરમાં રાખવા */
+    gap: 30px;
+    flex-wrap: wrap; /* મોબાઈલમાં આપોઆપ નીચે સેટ થશે */
+}
+
+.step-card {
+    background: #0a1120;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 45px 30px;
+    border-radius: 24px;
+    width: 320px;
+    transition: 0.4s ease;
+    text-align: center;
+}
+
+.step-card:hover { 
+    border-color: #2dd4bf; 
+    background: rgba(45, 212, 191, 0.05); 
+    transform: translateY(-10px); 
+}
+
+.step-num { 
+    font-size: 2.8rem; 
+    color: #115e59; 
+    font-weight: 900; 
+    display: block; 
+    margin-bottom: 20px; 
+    opacity: 0.6;
+}
+
+.step-card h4 { 
+    margin-bottom: 15px; 
+    font-size: 1.5rem; 
+    color: #fff;
+}
+
+.step-card p { 
+    color: #94a3b8; 
+    font-size: 1rem; 
+    line-height: 1.6; 
+}
+
+/* --- Categories Tags --- */
+.categories-section { 
+    z-index: 1; 
+    padding-bottom: 50px;
+}
+
+.section-subtitle { 
+    font-size: 2rem; 
+    margin-bottom: 40px; 
+}
+
+.tags-container { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 15px; 
+    justify-content: center; 
+}
+
+.tag {
+    background: #111827; 
+    border: 1px solid #1f2937;
+    padding: 12px 28px; 
+    border-radius: 50px; 
+    font-size: 0.95rem;
+    cursor: pointer; 
+    transition: 0.3s;
+    color: #cbd5e1;
+}
+
+.tag:hover { 
+    border-color: #2dd4bf; 
+    color: #fff; 
+    background: rgba(45, 212, 191, 0.1);
+}

@@ -1,0 +1,184 @@
+/* Container logic to put everything in the middle */
+.employer-hero-wrapper {
+    /* Black to Deep Blue Gradient */
+    background: radial-gradient(circle at center, #0a192f 0%, #000000 100%);
+    min-height: 90vh;
+    display: flex;
+    justify-content: center; /* Horizontally Center */
+    align-items: center;     /* Vertically Center */
+    width: 100%;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Glow Effect */
+.bg-glow {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(37, 99, 235, 0.15);
+    filter: blur(100px);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.employer-content-box {
+    text-align: center;
+    max-width: 900px;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Animations --- */
+
+/* Scale and Fade In animation */
+.fade-in-scale {
+    animation: fadeInScale 1.2s cubic-bezier(0.17, 0.67, 0.83, 0.67) forwards;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Floating Icon Animation */
+.floating {
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Typography Styling */
+.brand-icon-wrapper {
+    margin-bottom: 25px;
+}
+
+.main-heading {
+    color: #ffffff;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.text-blue {
+    color: #3b82f6; /* Highlight blue shade */
+}
+
+.sub-text {
+    color: #94a3b8;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 45px;
+    opacity: 0.9;
+}
+
+.sub-text strong {
+    color: #ffffff;
+}
+
+/* Glassmorphism Button */
+.btn-primary-custom {
+    background: #ffffff;
+    color: #000000 !important;
+    padding: 16px 40px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary-custom:hover {
+    background: #2563eb;
+    color: #ffffff !important;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.5);
+    text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-heading { font-size: 2.8rem; }
+    .sub-text { font-size: 1.1rem; }
+}
+
+/* Candidate Section Styling */
+.candidate-hero-wrapper {
+    position: relative;
+    padding: 80px 20px;
+    overflow: hidden;
+    text-align: center;
+    background: #0f172a; /* Dark background */
+}
+
+/* Purple Glow for Candidate Section */
+.bg-glow-purple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.candidate-content-box {
+    position: relative;
+    z-index: 1;
+}
+
+.text-purple {
+    background: linear-gradient(90deg, #a855f7, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+/* Animations */
+.fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.floating-delayed {
+    animation: floating 3s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+
+/* Button Styling */
+.btn-secondary-custom {
+    display: inline-block;
+    padding: 14px 32px;
+    background: #a855f7;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+}
+
+.btn-secondary-custom:hover {
+    background: #9333ea;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6);
+}

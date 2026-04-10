@@ -1,0 +1,35 @@
+@{
+    ViewData["Title"] = "Success - SkilNexa";
+}
+<link rel="stylesheet" href="~/css/post-apply.css" />
+
+<div class="post-apply-wrapper">
+    <div class="confetti-container" id="confetti"></div>
+
+    <div class="post-apply-card">
+        <div class="success-icon-circle">
+            <div class="check-mark">L</div>
+        </div>
+        
+        <h1 class="fade-in">Application Submitted!</h1>
+        <p class="sub-text fade-in">You've successfully applied for <strong>@ViewBag.JobTitle</strong> at <strong>@ViewBag.Company</strong>.</p>
+
+        <div class="options-container fade-in-delayed">
+            <div class="action-card track-card" onclick="location.href='/Apply/TrackStatus'">
+                <div class="card-icon">📊</div>
+                <h3>Track Application</h3>
+                <p>Monitor your progress and interview stages in real-time.</p>
+                <span class="action-link">View Status →</span>
+            </div>
+
+            <div class="action-card browse-card" onclick="location.href='/Home/Discovery'">
+                <div class="card-icon">🔍</div>
+                <h3>Explore More Jobs</h3>
+                <p>Check out other opportunities that match your professional profile.</p>
+                <span class="action-link">Find Jobs →</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/post-apply.js"></script>

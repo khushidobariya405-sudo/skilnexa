@@ -1,0 +1,58 @@
+@{
+    ViewData["Title"] = "Track Internship - SkilNexa";
+}
+
+<link rel="stylesheet" href="~/css/internship-track.css" asp-append-version="true" />
+
+<div class="track-wrapper">
+    <header class="track-header">
+        <h2 class="text-cyan">My Internship <span>Status</span></h2>
+        <p>Real-time updates on your professional journey</p>
+    </header>
+
+    <div class="track-card">
+        <div class="card-top">
+            <div class="job-info">
+                <h3>Web Development Intern</h3>
+                <p class="company">Skilnexa Partner #102</p>
+            </div>
+            <div class="status-tag">IN REVIEW</div>
+        </div>
+
+        <div class="stepper-wrapper">
+            <div class="progress-bar-bg">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step completed" data-step="1">
+                    <div class="circle">✓</div>
+                    <span>Applied</span>
+                </div>
+                <div class="step active" data-step="2">
+                    <div class="circle">2</div>
+                    <span>Reviewing</span>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="circle">3</div>
+                    <span>Interview</span>
+                </div>
+                <div class="step" data-step="4">
+                    <div class="circle">4</div>
+                    <span>Selected</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="track-footer">
+            <p>📍 Applied on: 16 March 2026</p>
+            <p>ℹ️ Expect a response within 3-5 business days.</p>
+        </div>
+    </div>
+
+    <div class="action-footer">
+        <a href="/Home/InternshipList" class="btn-back">← Back to Internships</a>
+    </div>
+</div>
+
+<script src="~/js/internship-track.js" asp-append-version="true"></script>

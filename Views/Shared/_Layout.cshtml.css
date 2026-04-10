@@ -1,0 +1,151 @@
+﻿/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* NAVBAR STYLING */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(255, 255, 255, 0.95); /* Light transparent */
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #1b6ec2;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #1b6ec2;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Button Styles */
+.btn-outline {
+    padding: 8px 20px;
+    border: 2px solid #1b6ec2;
+    background: transparent;
+    color: #1b6ec2;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    padding: 8px 20px;
+    border: none;
+    background: #1b6ec2;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #155a9c;
+    transform: translateY(-2px);
+}
+
+/* HERO SECTION (Index.cshtml mate) */
+.hero {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-bg-img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* FOOTER STYLING */
+.skilnexa-footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 50px 5% 20px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 50px;
+}
+
+.link-column h3 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: #4facfe;
+}
+
+.link-column ul {
+    list-style: none;
+}
+
+.link-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+    line-height: 2;
+    transition: 0.3s;
+}
+
+.link-column ul li a:hover {
+    color: white;
+}

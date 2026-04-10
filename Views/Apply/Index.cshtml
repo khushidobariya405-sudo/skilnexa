@@ -1,0 +1,54 @@
+@model SkilNexa.Models.JobApplicationViewModel
+
+@{
+    bool isSuccess = ViewBag.IsSuccess ?? false;
+}
+
+<link rel="stylesheet" href="~/css/apply-page.css" />
+
+<div class="apply-page-container">
+    @if (!isSuccess)
+    {
+        <div class="apply-grid">
+            <div class="job-info-card">
+                <span class="status-badge">New Opening</span>
+                <h1>@Model.JobTitle</h1>
+                <p class="company">at @Model.CompanyName</p>
+                <hr />
+                <div class="tracking-preview">
+                    <h4>Application Timeline</h4>
+                    <ul class="timeline">
+                        <li class="active">Start Application</li>
+                        <li>Submit Details</li>
+                        <li>HR Review</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="form-card">
+                <form asp-action="Submit" method="post" enctype="multipart/form-data">
+                    <input type="hidden" asp-for="JobTitle" />
+                    <input type="hidden" asp-for="CompanyName" />
+                    
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <input type="text" asp-for="CandidateName" placeholder="Enter your name" required />
+                    </div>
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" asp-for="Email" placeholder="Enter your email" required />
+                    </div>
+                    <div class="input-group">
+                        <label>Upload Resume (PDF)</label>
+                        <div class="file-drop-area">
+                            <input type="file" asp-for="Resume" accept=".pdf" required />
+                            <p>Drag or click to upload</p>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    }
+    
+</div>
